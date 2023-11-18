@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Dashboard</title>
+</head>
+<body>
+  
+    <div class="app-container">
+        <div class="left-container">
+            <div class="todo-container">
+                <h1>To-Do List</h1>
+                <div>
+                    <input type="text" id="taskInput" 
+                    placeholder="Ajouter une tâche">
+                    <button onclick="addTask()">Ajouter</button>
+                </div>
+                <ul id="taskList"></ul>
+            </div>
+            <div class="calendar-container">
+                <h1>Calendrier</h1>
+                <div id="calendar"></div>
+                <div class="events"></div>
+                <div class="day-events"></div>
+            </div>
+        </div>
+        <div class="center-container">
+            <div class="calculator">   
+                <h1>Calculatrice</h1>
+                <input type="text" id="display" 
+                class="inputCal" disabled>
+                <div class="buttons">
+                    <button onclick="appendToDisplay('1')">1</button>
+                    <button onclick="appendToDisplay('2')">2</button>
+                    <button onclick="appendToDisplay('3')">3</button>
+                    <button onclick="appendToDisplay('+')">+</button>
+                    <button onclick="appendToDisplay('4')">4</button>
+                    <button onclick="appendToDisplay('5')">5</button>
+                    <button onclick="appendToDisplay('6')">6</button>
+                    <button onclick="appendToDisplay('-')">-</button>
+                    <button onclick="appendToDisplay('7')">7</button>
+                    <button onclick="appendToDisplay('8')">8</button>
+                    <button onclick="appendToDisplay('9')">9</button>
+                    <button onclick="appendToDisplay('*')">*</button>
+                    <button onclick="appendToDisplay('0')">0</button>
+                    <button onclick="clearDisplay()">C</button>
+                    <button onclick="calculateResult()">=</button>
+                    <button onclick="appendToDisplay('/')">/</button>
+                </div>
+            </div>
+            <div class="help">
+              <h1>Documentation</h1>
+              <div class="contentHelp">
+              <a href="https://developer.mozilla.org/fr/docs/Web/JavaScript" target="_blank"
+              ><img src="assets/images/js.png" alt="icon de js"></a>
+              <a href="https://www.php.net/docs.php" target="_blank"
+              ><img src="assets/images/php.png" alt="icon de php"></a>
+              <a href="https://nodejs.org/en/docs" target="_blank"
+              ><img src="assets/images/nodejs.png" alt="icon de node.js"></a>
+              <a href="https://symfony.com/doc/current/index.html" target="_blank"
+              ><img src="assets/images/symfony.png" alt="icon de Symfony"></a>
+              <a href="https://angular.io/docs" target="_blank"
+              ><img src="assets/images/angular.png" alt="icon de Angular"></a>
+              <a href="https://www.w3.org/" target="_blank"
+              ><img src="assets/images/w3c.png" alt="icon de W3C"></a>
+              <a href="https://stackoverflow.com/" target="_blank"
+              ><img src="assets/images/stackoverflow.png" alt="icon de Stack Overflow"></a>
+              <a href="https://fr.legacy.reactjs.org/" target="_blank"
+              ><img src="assets/images/react.png" alt="icon de React"></a>
+              <a href="https://vuejs.org/" target="_blank"
+              ><img src="assets/images/icons8-vue-js-480.png" alt="icon de React"></a>
+              <a href="https://www.java.com/fr/" target="_blank"
+              ><img src="assets/images/java.png" alt="icon de React"></a>
+              <a href="https://docs.python.org/3//" target="_blank"
+              ><img src="assets/images/python.png" alt="icon de React"></a>
+              <a href="https://fr.wordpress.org/support/" target="_blank"
+              ><img src="assets/images/wp.png" alt="icon de React"></a>
+              <a href="https://www.mongodb.com/docs/" target="_blank"
+              ><img src="assets/images/mongodb.png" alt="icon de React"></a>
+              <a href="https://docs.github.com/fr/get-started/using-git/about-git" target="_blank"
+              ><img src="assets/images/git.png" alt="icon de React"></a>
+              <a href="https://www.typescriptlang.org/fr/docs/" target="_blank"
+              ><img src="assets/images/ts.png" alt="icon de React"></a>
+              <a href="https://developer.mozilla.org/fr/docs/Web/XML/XML_introduction" target="_blank"
+              ><img src="assets/images/xml.png" alt="icon de React"></a>
+              <a href="https://sass-lang.com/documentation/" target="_blank"
+              ><img src="assets/images/sass.png" alt="icon de React"></a>
+              <a href="https://developer.mozilla.org/fr/docs/Web/HTML" target="_blank"
+              ><img src="assets/images/html.png" alt="icon de React"></a>
+              <a href="https://developer.mozilla.org/fr/docs/Web/CSS/Reference" target="_blank"
+              ><img src="assets/images/css.png" alt="icon de React"></a>
+              <a href="https://apidocjs.com/" target="_blank"
+              ><img src="assets/images/api.png" alt="icon de React"></a>
+            </div>
+          </div>
+          
+        </div>
+        <div class="right-container">
+            <div class="dicoApp">
+                <h1>Dictionnaire</h1>
+                <div id="searchBar">
+                    <input type="text" id="text" 
+                    placeholder="Rechercher un mot en anglais">
+                    <button onclick="search()">Rechercher</button>
+                </div>
+                <div id="resultat"></div>
+            </div>
+            <div class="wrapper">
+              <h1>Horloge/Alarme</h1>
+              <img src="assets/images/clock.svg" alt="clock">
+              <h2>00:00:00 PM</h2>
+              <div class="content">
+                <div class="column">
+                  <select>
+                    <option value="Hour" selected disabled hidden>Heure</option>
+                  </select>
+                </div>
+                <div class="column">
+                  <select>
+                    <option value="Minute" selected disabled hidden>Minute</option>
+                  </select>
+                </div>
+                <div class="column">
+                  <select>
+                    <option value="AM/PM" selected disabled hidden>AM/PM</option>
+                  </select>
+                </div>
+              </div>
+              <button id="button">Démarrer</button>
+            </div>
+        </div>
+        
+    </div>
+   
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

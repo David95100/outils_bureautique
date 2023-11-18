@@ -1,0 +1,381 @@
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    height: 100vh;
+    background: #eae9ee; /* Nuance de blanc */
+    padding: 0;
+}
+
+.app-container {
+    display: flex;
+    max-width: 1200px;
+    width: 100%;
+    margin: 20px; 
+}
+
+.left-container,
+.center-container,
+.right-container {
+    display: flex;
+    flex-direction: column;
+    margin: 10px; 
+}
+
+.todo-container,
+.calendar-container,
+.calculator,
+.dicoApp,
+.wrapper,
+.help {
+    background: #eae9ee;
+    padding: 20px;
+    border-radius: 8px;
+    -webkit-box-shadow: 5px 5px 10px rgb(0,0,0,0.1),
+    -5px -5px 10px #fff;
+  -moz-box-shadow: 5px 5px 10px rgb(0,0,0,0.1),
+    -5px -5px 10px #fff;
+  box-shadow: 5px 5px 10px rgb(0,0,0,0.1),
+    -5px -5px 10px #fff;
+  -webkit-transition: box-shadow 300ms;
+  -moz-transition: box-shadow 300ms;
+  transition: box-shadow 300ms;
+    margin-bottom: 10px; 
+    width: 500px;
+}
+
+.todo-container {
+    max-height: 220px;
+    overflow-y: auto;
+}
+#taskList{
+    color: #a2aad2;
+}
+.calendar-container {
+    margin-top: 20px;
+}
+
+#calendar {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 10px;
+}
+
+.day {
+    padding: 10px;
+    background-color: #eae9ee;
+    -webkit-box-shadow: 5px 5px 10px rgb(0,0,0,0.1),
+    -5px -5px 10px #f9f7fa;
+  -moz-box-shadow: 5px 5px 10px rgb(0,0,0,0.1),
+    -5px -5px 10px #f9f7fa;
+  box-shadow: 5px 5px 10px rgb(0,0,0,0.1),
+    -5px -5px 10px #f9f7fa;
+  -webkit-transition: box-shadow 300ms;
+  -moz-transition: box-shadow 300ms;
+  transition: box-shadow 300ms;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.day:hover{
+    background: #eae9ee; /* Changement de couleur au survol */
+    box-shadow: inset 2px 2px 5px #d9d9d9, inset -5px -5px 10px #fbfaff;
+}
+.current-month {
+    background: linear-gradient(to right,#b2b9dc,#a2aad2);
+    color: black;
+}
+.current-month:hover{
+    background-color: #eae9ee;
+    box-shadow: inset 2px 2px 5px #d9d9d9, inset -5px -5px 10px #fbfaff;
+}
+
+.events {
+    margin-top: 10px;
+}
+
+.event {
+    margin: 5px 0;
+    font-size: 14px;
+    color: #333;
+}
+
+.dicoApp {
+    width: 460px; 
+}
+
+.calculator {
+    width: 300px;
+    height: 420px;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+input {
+    width: 95%;
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background: #f5f5f5;
+    box-shadow: inset 5px 5px 10px #d9d9d9, inset -5px -5px 10px #ffffff;
+}
+
+input:focus {
+    outline: none; /* Supprime la bordure de focus par défaut */
+}
+input{
+    color: #a2aad2;
+}
+#taskInput{
+    color: #a2aad2; /* Couleur du texte du placeholder */
+    font-size: 18px;
+    text-align: center;
+    background: #f5f5f5;
+    border: none;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: inset 5px 5px 10px #d9d9d9, inset -5px -5px 10px #ffffff;
+}
+.inputCal {
+    font-size: 30px;
+    height: 80px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+button {
+    width: 100%;
+    height: 48px;
+    font-size: 18px;
+    cursor: pointer;
+    background: #eae9ee; /* Même couleur que le fond du body */
+    color: black;
+    border: none;
+    border-radius: 8px;
+    -webkit-box-shadow: 5px 5px 10px rgb(0,0,0,0.1),
+    -5px -5px 10px #f9f7fa;
+  -moz-box-shadow: 5px 5px 10px rgb(0,0,0,0.1),
+    -5px -5px 10px #f9f7fa;
+  box-shadow: 5px 5px 10px rgb(0,0,0,0.1),
+    -5px -5px 10px #f9f7fa;
+    -webkit-transition: box-shadow 300ms; /* Durée de transition de 1000ms (1 seconde) */
+    -moz-transition: box-shadow 300ms;
+    transition: box-shadow 300ms;
+    transition: all .3s;
+}
+
+button:hover {
+    background: #eae9ee; 
+    box-shadow: inset 2px 2px 5px #d9d9d9, inset -5px -5px 10px #ffffff;
+}
+button:active{
+    color: #a2aad2;
+    box-shadow: inset 2px 2px 5px #d9d9d9, inset -5px -5px 10px #ffffff;
+    transform: scale(.9);
+    transition: all .3s;
+}
+span {
+    color: #a2aad2;
+}
+.help{
+    height: 255px;
+    max-width: 300px;
+    
+}
+.help img{
+    height: 55px;
+    width: 55px;
+    flex-wrap: wrap;
+    margin: 7px;
+    margin-top: 17px;
+
+}
+.help img:hover{
+    filter: brightness(70%);
+}
+.contentHelp{
+    height: 65%;
+    width:100%;
+    background: #eae9ee;
+    box-shadow: inset 5px 5px 10px #d9d9d9, inset -5px -5px 10px #ffffff;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+.contentHelp:hover{
+    background: #eae9ee; 
+    box-shadow: inset 5px 5px 10px #cacacc, inset -5px -5px 10px #ffffff;
+}
+.wrapper {
+    width: 440px;
+    height: 380px;
+    padding: 30px 30px 38px;
+    flex-direction: column;
+     border-radius: 8px;
+    
+}
+
+.wrapper img {
+    max-width: 103px;
+    margin-left: 150px;
+}
+
+.wrapper h2 {
+    font-size: 30px;
+    font-weight: 500;
+    margin-left: 120px;
+    
+}
+
+.wrapper .content {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.content.disable {
+    cursor: no-drop;
+}
+
+.content .column {
+    padding: 0 10px;
+    border-radius: 5px;
+    border: 1px solid black;
+    width: calc(100% / 3 - 5px);
+    background: white;
+}
+
+.content.disable .column {
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.column {
+    position: relative; /* Ajoutez une position relative pour positionner l'ombre interne */
+}
+
+/* ... Autres styles restent inchangés ... */
+
+/* ... Autres styles restent inchangés ... */
+
+.column::before {
+    content: "";
+    position: absolute;
+    top: 2px; /* Ajustez la position en fonction de votre design */
+    right: 2px; /* Ajustez la position en fonction de votre design */
+    bottom: 2px; /* Ajustez la position en fonction de votre design */
+    left: 2px; /* Ajustez la position en fonction de votre design */
+    border-radius: 8px;
+    box-shadow: inset 3px 3px 6px #d9d9d9, inset -3px -3px 6px #ffffff; /* Ajustez les valeurs pour le contour neumorphique */
+    pointer-events: none; /* Permet le clic à travers l'ombre */
+}
+option:focus{
+    outline:none !important;
+}
+
+.column select {
+    width: calc(100% - 10px); /* Ajustez la largeur en fonction de votre design et de la bordure intérieure */
+    height: 53px;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 19px;
+    padding: 5px; /* Ajustez l'espacement interne en fonction de votre design */
+    appearance: none; /* Supprimez les styles par défaut du navigateur */
+    -moz-appearance: none; /* Supprimez les styles par défaut de Firefox */
+    -webkit-appearance: none; /* Supprimez les styles par défaut de WebKit */
+}
+
+/* ... Autres styles restent inchangés ... */
+
+
+/* ... Autres styles restent inchangés ... */
+
+.wrapper button {
+    width: 100%;
+    border: none;
+    outline: none;
+    color: black;
+    cursor: pointer;
+    font-size: 20px;
+    padding: 17px 0;
+    margin-top: 20px;
+    background: #eae9ee;
+}
+.wrapper button:hover{
+    background: #eae9ee; 
+    box-shadow: inset 5px 5px 10px #d9d9d9, inset -5px -5px 10px #ffffff;
+}
+
+@media (max-width: 768px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .left-container,
+    .center-container,
+    .right-container {
+        margin: 10px 0; 
+        width: 100%;
+    }
+
+    .todo-container,
+    .calendar-container,
+    .calculator,
+    .dicoApp,
+    .wrapper,
+    .help {
+        width: 100%;
+    }
+    .help{
+        max-width: 700px;
+    }
+}
+@media (max-width: 430px) {
+    .app-container {
+        flex-direction: column;
+    }
+
+    .left-container,
+    .center-container,
+    .right-container,
+    .wrapper {
+        margin: 10px 0; 
+        width: 100%;
+    }
+
+    .todo-container,
+    .calendar-container,
+    .calculator,
+    .dicoApp,
+    .wrapper {
+        width: 100%;
+    }
+}
+
+@media (min-width: 1080px) {
+    .app-container {
+        display: flex;
+        max-width: 1300px;
+        width: 100%;
+        margin: 20px; 
+    }
+    
+    .left-container,
+    .center-container,
+    .right-container {
+        display: flex;
+        flex-direction: column;
+        margin: 10px; 
+    }
+    
+}
